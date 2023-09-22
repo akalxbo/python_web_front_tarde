@@ -8,13 +8,14 @@ const TodoForm = () => {
 
     const { add, search } = useTodo()
     const [name, setDescription] = useState<string>('')
+    const [t_desc, setDesc] = useState<string>('')
     const { refetch } = search('')
     const clear = () => {
         setDescription("")
         refetch()
     }
     const addChore = async () => {
-        await add(name)
+        await add(name, t_desc)
         refetch()
         setDescription("")
     }
@@ -22,6 +23,7 @@ const TodoForm = () => {
     return (
         <PaddingBottom role="form">
             <Grid cols="12 9 10" >
+                {/*setDesc*/}
                 <input
                     type=""
                     style={{ marginBottom: 10 }}
@@ -29,6 +31,16 @@ const TodoForm = () => {
                     placeholder='Adicionar uma tarefa'
                     onChange={(e) => setDescription(e.target.value)}
                     value={name} />
+
+                </Grid>  
+                <Grid cols="12 9 10" >
+                <input
+                    type=""
+                    style={{ marginBottom: 10 }}
+                    className='form-control'
+                    placeholder='Adicionar uma tarefa'
+                    onChange={(e) => setDesc(e.target.value)}
+                    value={t_desc} />
             </Grid>
             <Grid cols="12 3 2">
                 <>

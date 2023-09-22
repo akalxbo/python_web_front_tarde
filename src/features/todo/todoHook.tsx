@@ -19,7 +19,7 @@ export const useTodo = () => {
             const { data, refetch, isLoading } = todoAPI.useSearchQuery({ name })
             return { data, refetch, isLoading }
         },
-        add: (name: string) => add({ name }).unwrap()
+        add: (name: string, descricao: string) => add({ name, descricao }).unwrap()
         // return dispatch(todoAction.add(name))
         // }
         ,

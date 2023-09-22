@@ -41,7 +41,7 @@ const TodoList = () => {
         return list?.map(todo => (
             <Tabela key={todo.id}>
 
-                <td className={!todo.feito ? 'markAsDone' : ''}>{todo.nome}</td>
+                <td className={!todo.feito ? 'markAsDone' : ''}>{todo.nome} - {todo.decricao}</td>
                 <td style={{ float: 'right' }}>
                     <IconButton
                         style="success"

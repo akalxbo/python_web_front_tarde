@@ -20,13 +20,13 @@ export const todoAPI = rtkApi.injectEndpoints({
         }),
         add: builder.mutation<
 
-            TodoGet, { name: string }
+            TodoGet, { name: string, descricao: string; }
         >({
-            query: ({ name }) => {
+            query: ({ name,descricao }) => {
 
                 const data = {
                     nome: name,
-                    decricao: "Sem descrição",
+                    decricao: descricao,
                     feito: true,
                     delete: false
                 }

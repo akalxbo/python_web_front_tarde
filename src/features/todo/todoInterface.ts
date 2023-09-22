@@ -1,6 +1,7 @@
 export interface TodoGet {
     id: string;
     nome: string;
+    decricao:string;
     created: string;
     __v: number;
     feito: boolean;
